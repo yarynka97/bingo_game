@@ -1,0 +1,53 @@
+<!DOCKTYPE HTML>
+<html>
+<head>
+	<title>BINGO Game</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div id="container">
+		<!-- Settings -->
+		<div class="start-box">
+			<div class="text">
+				<p>Dimension number</p>
+				<p>Count of number</p>
+				<p>Cards number</p>
+			</div>
+			<div class="options">
+				<select id="dimension" class="input" onclick="game.countRange()">
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>	
+				</select>
+				<input type="number" id="numbers" class="input"  value="9" min='9' max='109'><br>
+				<select id="cards" class="input">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>	
+					<option>4</option>
+					<option>5</option>
+				</select>	
+			</div>		
+			<button onclick="game.setValues()"><b>START GAME</b></button>	
+		</div>
+
+		<!-- Main form -->
+		<div class="main-box">
+			<div class="number-field">
+				<button onclick="game.showSettings()">NEW GAME</button>
+				<h1>Your number is</h1>
+				<div id="number"></div>
+				<button id="next" onclick="game.generateNumber()">NEXT NUMBER</button>
+				<button id="bingo" onclick="game.isBingo()">BINGO!!!</button>
+			</div>
+			<div class="cards-field">
+				
+			</div>
+		</div>
+
+		<!-- End of game window -->
+		<div class="end"><p id="result"></p></div>
+	</div>
+</body>
+</html>
